@@ -13,15 +13,46 @@
 
 # Подсказка: воспользоваться методом .format()
 
+frut_number = '1.'
+frut_name = 'яблоко'
+frut_number_2 = '2.'
+frut_name_2 = 'киви'
+print ("{0} {1}" .format(frut_number, frut_name))
+print ("{0} {1}" .format(frut_number_2, frut_name_2))
+
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке и выведите результат.
 
+my_list = [1, 2, 3, 4, 5]
+print (my_list[0:-3])
+my_list = my_list [-3:]
+print (my_list)
 
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
 # и выведите результат
+
+my_list = [1, 2, 3, 4, 5]
+second_list = []
+print (my_list)
+
+for el in reversed(my_list):
+     count = my_list.index(el)
+     if (el % 2) == 0:
+        second_el= el/4
+        second_list.insert(0, second_el)
+        my_list.remove(el)
+
+    
+     else:
+        el = el*2
+        my_list[count] = el
+
+print(my_list)
+print(second_list)
+
 
