@@ -5,6 +5,21 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 
+def my_round(number, ndigits):
+    int_ndigits = int(ndigits)
+    degree = pow(10,int(ndigits))
+    mul =  number*degree
+    res = int(mul)
+    ost = mul-res
+
+
+    if not (abs(ost) < 0.5):
+        if res>0: res+=1
+        else: res-=1
+    return res/degree
+
+print
+
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
 # Решение реализовать в виде функции.
@@ -12,6 +27,18 @@
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 
+def lucky_ticket(ticket_number):
+    tn_list=str(ticket_number)
+    if len(tn_list) != 6: return False
+    first=0
+    last=0
+    for i in range(3):
+        first+=int(tn_list[i])
+        last+=int(tn_list[-i-1])
+    return first==last
 
+def test(got, expected):
+    prefix = "OK" if got == expected else "X"
+    print("{0} - Получено: {1} | Ожидалось: {2}".format(prefix, repr(got), repr(expected)))    
 
-
+   
